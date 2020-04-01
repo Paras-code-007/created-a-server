@@ -1,9 +1,8 @@
 // const express=require('express')
 // const router=express.Route
 // const route= router()
-const route= require('express').Router()
-
-module.exports= route
+const express= require('express')
+const route=express.Router()
 
 let student=[
     {name:"rahul",college:"dtu",year:"I"},
@@ -11,7 +10,6 @@ let student=[
     {name:"satish",college:"iiit",year:"III"},
     {name:"parul",college:"nsit",year:"IV"}
 ]
-
 
 route.get('/',function (req,res) {
     res.send(student)
@@ -29,3 +27,5 @@ route.post('/',function (req,res) {
 route.get('/:id',function (req,res) {
     res.send(student[req.params.id])
 })
+
+module.exports= route
