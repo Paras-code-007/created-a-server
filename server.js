@@ -5,7 +5,7 @@ const port = 3000;
 
 //support parsing of application/x-www-form-urlencoded post data
 server.use(express.json());
-//server.use(bodyParser.urlencoded({ extended: true }));
+server.use(express.urlencoded());
 
 const studentroute= require('./routes/student.js')
 server.use('/student',studentroute)
